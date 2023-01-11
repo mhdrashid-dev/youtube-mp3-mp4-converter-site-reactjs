@@ -2,8 +2,8 @@ import React from 'react'
 
 function Header() {
   return (
-    <section className='header w-full h-[10vh] '>
-        <div className='w-full h-full flex justify-between items-center p-5 container mx-auto'>
+    <section className='header w-full h-[10vh]'>
+        <div className='w-full h-full flex justify-between items-center p-5'>
             <div className="logo font-montserrat">
                 <h1 className='text-white font-bold text-xl md:text-2xl xl:text-3xl'>YT.<span className='text-primary'>com</span> </h1>
             </div>

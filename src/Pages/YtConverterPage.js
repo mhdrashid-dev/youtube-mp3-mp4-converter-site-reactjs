@@ -1,11 +1,15 @@
 import React from 'react'
 import Header from '../Components/Header'
+import Mp3converter from '../Components/Mp3converter'
 
 function YtConverterPage() {
   return (
-    <div className='w-full min-h-[100vh] bg-secondary'>
-      <Header></Header>
-    </div>
+    <section className='w-full min-h-[100vh] bg-secondary'>
+      <div className='container mx-auto'>
+        <Header></Header>
+        <Mp3converter></Mp3converter>
+      </div>
+    </section>
   )
 }
 
