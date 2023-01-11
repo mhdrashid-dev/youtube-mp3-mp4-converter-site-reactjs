@@ -10,7 +10,7 @@ function Mp3converter() {
         <div className="link-sec my-5 flex flex-col justify-center items-center p-5 w-full">
             <div className="input-sec w-full md:w-2/3 lg:w-2/4 rounded-lg px-3 py-1 md:py-2 md:px-5 lg:py-1 xl:py-2  bg-white flex justify-between items-center">
                 <input type="text" className='w-3/4 text-sm md:text-lg lg:text-base xl:text-lg bg-transparent focus:outline-none' placeholder='https://youtu.be/5hFd6zGkxLE'/>
-                <button className='text-black duration-300 active:scale-150'><i class="fa-solid fa-magnifying-glass md:text-xl"></i></button>
+                <button className='text-black duration-300 active:scale-150'><i className="fa-solid fa-magnifying-glass md:text-xl"></i></button>
             </div>
             <p className='text-[.5rem] text-white mt-5 md:text-xs md:mt-8 '>By using our service you accept our Terms of Service</p>
         </div>      

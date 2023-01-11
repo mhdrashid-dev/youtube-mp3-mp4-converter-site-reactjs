@@ -4,16 +4,21 @@ import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 import Mp3converter from '../Components/Mp3converter'
 import Mp4converter from '../Components/Mp4converter'
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 
 function YtConverterPage() {
   return (
     <section className='w-full min-h-[100vh] bg-secondary'>
       <div className='container mx-auto'>
-        <Header></Header>
-        {/* <Mp3converter></Mp3converter> */}
-        <Mp4converter></Mp4converter>
-        <About></About>
-        <Footer></Footer>
+        <Router>
+            <Header></Header>
+            <Routes>                
+                <Route exact path='/' element={<Mp3converter></Mp3converter>}></Route>                               
+                <Route path='/mp4' element={<Mp4converter></Mp4converter>}></Route>                
+            </Routes>
+            <About></About>
+            <Footer></Footer>
+        </Router>
       </div>
     </section>
   )
