@@ -2,7 +2,7 @@ import React from 'react'
 
 function Mp3converter() {
   return (
-    <div className='w-full min-h-[30vh] '>
+    <div data-aos="flip-left" data-aos-duration="1000" className='w-full min-h-[30vh] '>
         <div className="heading text-center my-5 py-5 font-montserrat">
             <h1 className='text-primary text-lg md:text-2xl font-bold my-2 '>Mp3 <span className='text-white text-sm md:text-lg'> converter</span></h1>
             <p className='text-white text-[.5rem] md:text-xs my-2'>Convert and download Youtube videos in MP3 format for free.</p>
