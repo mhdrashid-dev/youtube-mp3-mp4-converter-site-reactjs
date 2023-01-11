@@ -3,7 +3,7 @@ import Header from '../Components/Header'
 
 function YtConverterPage() {
   return (
-    <div>
+    <div className='w-full min-h-[100vh] bg-secondary'>
       <Header></Header>
     </div>
   )

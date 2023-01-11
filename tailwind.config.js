@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       fontFamily:{
         montserrat:'Montserrat',
+      },
+      colors:{
+        primary:'rgb(21, 220, 148)',
+        secondary:'rgb(27,26,31)',
       }
     },
   },
