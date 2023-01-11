@@ -9,6 +9,7 @@ import Resultmp3 from '../Components/Resultmp3'
 import Resultmp4 from '../Components/Resultmp4'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Loading from '../Components/Loading'
 
 
 function YtConverterPage() {   
@@ -27,7 +28,8 @@ function YtConverterPage() {
                 <Route exact path='/' element={<Mp3converter></Mp3converter>}></Route>                               
                 <Route path='/mp4' element={<Mp4converter></Mp4converter>}></Route>  
                 <Route path='/resultmp3' element={<Resultmp3></Resultmp3>}></Route>  
-                <Route path='/resultmp4' element={<Resultmp4></Resultmp4>}></Route>                  
+                <Route path='/resultmp4' element={<Resultmp4></Resultmp4>}></Route>           
+                <Route path='/loading' element={<Loading></Loading>}></Route>                                 
             </Routes>
             <About></About>
             <Footer></Footer>
