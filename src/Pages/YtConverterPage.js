@@ -1,5 +1,6 @@
 import React from 'react'
 import About from '../Components/About'
+import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 import Mp3converter from '../Components/Mp3converter'
 import Mp4converter from '../Components/Mp4converter'
@@ -12,6 +13,7 @@ function YtConverterPage() {
         {/* <Mp3converter></Mp3converter> */}
         <Mp4converter></Mp4converter>
         <About></About>
+        <Footer></Footer>
       </div>
     </section>
   )
