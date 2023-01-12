@@ -5,7 +5,7 @@ export let Mp4Value=createContext();
 
 function Mp4context(props) {
 
-    let [mp4Data,setMp4Data]=useState({thumbnail:null,title:null,qualityOne:null,qualityTwo:null,qualityThree:null,qualityFour:null})
+    let [mp4Data,setMp4Data]=useState({thumbnail:null,title:null,qualityOne:null,qualityTwo:null,qualityThree:null})
   return (
     <Mp4Value.Provider value={[mp4Data,setMp4Data]}>
         {props.children}

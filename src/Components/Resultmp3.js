@@ -18,7 +18,7 @@ function Resultmp3() {
         <div className="content">
             <div className="music-info  flex flex-col justify-center items-center w-full h-[200px] mx-auto text-center">
                 <img className='object-cover w-full rounded-md' src={mp3.thumbnail} alt="" />
-                <h1 className='text-primary font-montserrat font-bold my-6' >En Kanavil (The Love Story)</h1>
+                <h1 className='text-primary font-montserrat font-bold my-6' >{mp3.title}</h1>
             </div>
             <div className="download-sec flex flex-col justify-center items-center">
                 <div className="heading mt-8 mb-4">

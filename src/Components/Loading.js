@@ -1,6 +1,16 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { Mp3Value } from '../Context/Mp3context'
 
-function Loading() {
+function Loading() {  
+
+
+  let value=useContext(Mp3Value);
+  let setisLoading=value[5];
+
+  let GoHome=()=>{
+    setisLoading(false);
+  }
+
   return (
     <div className='w-full h-[50vh] flex flex-col justify-center items-center'>
         <div className="mb-10">
@@ -8,6 +18,7 @@ function Loading() {
         </div>
         <h1 className='text-white font-montserrat text-sm font-bold md:text-lg'>Converting....</h1>
         <h1 className='text-white font-montserrat text-[.6rem] md:text-sm mt-5'>This may take a few seconds, please don't close this page</h1>
+        <button className='bg-primary text-black px-4 rounded-lg mt-10 font-montserrat font-bold' onClick={GoHome}>back...</button>
     </div>
   )
 }

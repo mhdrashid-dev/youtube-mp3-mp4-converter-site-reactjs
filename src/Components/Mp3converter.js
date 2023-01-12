@@ -19,8 +19,7 @@ function Mp3converter() {
   }  
 
   let GetDataMp3=()=>{       
-    setisLoading(true);
-    console.log(mp3Data);
+    setisLoading(true);    
     const options = {
       method: 'GET',
       url: 'https://youtube-video-download-info.p.rapidapi.com/dl',
@@ -33,9 +32,10 @@ function Mp3converter() {
     
     axios.request(options).then(function (response) {      
       console.log(response.data);
+      let title=response.data.cleantitle;
       setMp3Data({
         thumbnail:response.data.thumb,
-        title:response.data.cleantitle,   
+        title:title.slice(0,10),
         qualityOne:response.data.link[600],
         qualityTwo:response.data.link[139],
         qualityThree:response.data.link[140]        
