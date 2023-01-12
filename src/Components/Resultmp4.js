@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Resultmp4() {
+
+function Resultmp4() {    
+
   return (
     <div className='w-full min-h-[80vh] flex justify-center items-center'>
         <div className="content">
@@ -14,22 +16,24 @@ function Resultmp4() {
                 </div>
                 <div className="download-links mt-4">
                     <table>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>360p</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>480p</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>720p</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>1080p</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
+                        <tbody>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>360p</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>480p</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>720p</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>1080p</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

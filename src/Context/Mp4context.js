@@ -1,10 +1,15 @@
-import React from 'react'
+import React,{createContext,useState} from 'react'
 
-function Mp4context() {
+
+export let Mp4Value=createContext();
+
+function Mp4context(props) {
+
+    let [mp4Data,setMp4Data]=useState({thumbnail:'',title:'',qualityOne:'',qualityTwo:'',qualityThree:'',qualityFour:''})
   return (
-    <div>
-      
-    </div>
+    <Mp4Value.Provider value={[mp4Data,setMp4Data]}>
+        {props.children}
+    </Mp4Value.Provider>
   )
 }
 

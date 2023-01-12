@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Resultmp3() {
+function Resultmp3() {   
   return (
     <div className='w-full min-h-[80vh] flex justify-center items-center'>
         <div className="content">
@@ -14,18 +14,20 @@ function Resultmp3() {
                 </div>
                 <div className="download-links mt-4">
                     <table>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>128kbps</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>256kbps</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
-                        <tr className=''>
-                            <td className='px-5 py-3 text-white text-sm'>320kbps</td>
-                            <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
-                        </tr>
+                        <tbody>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>128kbps</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>256kbps</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                            <tr className=''>
+                                <td className='px-5 py-3 text-white text-sm'>320kbps</td>
+                                <td className='px-5'><a className='bg-primary text-black px-2 border border-white rounded-lg cursor-pointer' href="">Download now</a></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

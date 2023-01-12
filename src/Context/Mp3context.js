@@ -1,10 +1,17 @@
-import React from 'react'
+import React,{createContext,useState} from 'react'
 
-function Mp3context() {
+
+export let Mp3Value=createContext();
+
+function Mp3context(props) {
+
+    let [mp3data,setMp3Data] =useState({thumbnail:'',title:'',qualityOne:'',qualityTwo:'',qualityThree:''});
+
+
   return (
-    <div>
-      
-    </div>
+    <Mp3Value.Provider value={[mp3data,setMp3Data]}>
+        {props.children}
+    </Mp3Value.Provider>
   )
 }
 
