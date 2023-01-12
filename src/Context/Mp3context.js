@@ -5,7 +5,7 @@ export let Mp3Value=createContext();
 
 function Mp3context(props) {
 
-    let [mp3data,setMp3Data] =useState({thumbnail:'',title:'',qualityOne:'',qualityTwo:'',qualityThree:''});
+    let [mp3data,setMp3Data] =useState({thumbnail:null,title:null,qualityOne:null,qualityTwo:null,qualityThree:null});
 
 
   return (
