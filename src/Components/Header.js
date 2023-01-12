@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Header() {
 
-    let [activeLink,setActiveLink]=useState('YouTube to mp3')
-
-    console.log(activeLink);
+    let [activeLink,setActiveLink]=useState('YouTube to mp3')    
 
   return (
     <section className='header w-full h-[10vh] mb-16'>
