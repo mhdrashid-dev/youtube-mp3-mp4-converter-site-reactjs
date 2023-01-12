@@ -1,11 +1,11 @@
 import React,{useContext} from 'react'
-import { Mp3Value } from '../Context/Mp3context'
+import { DataValue } from '../Context/Context';
 
 function Loading() {  
 
 
-  let value=useContext(Mp3Value);
-  let setisLoading=value[5];
+  let {setisLoading}=useContext(DataValue);  
+  
 
   let GoHome=()=>{
     setisLoading(false);

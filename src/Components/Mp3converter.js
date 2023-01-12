@@ -1,17 +1,20 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import Loading from './Loading'
 import axios from 'axios'
-import { Mp3Value } from '../Context/Mp3context'
+import { DataValue } from '../Context/Context'
 import { useNavigate } from 'react-router-dom'
 import Warning from './Warning'
 
 function Mp3converter() {
   
-  let [mp3Data,setMp3Data,error,setError,isLoading,setisLoading]=useContext(Mp3Value);  
+  let {setMp3Data,error,setError,isLoading,setisLoading}=useContext(DataValue);  
   let [link,setLink]=useState(null);
   let navigate = useNavigate('');  
 
-
+  useEffect(()=>{
+    setisLoading(false);
+  },[])
+  
   let CreateLink=(e)=>{    
       let value=e.target.value;
       let sliceLink=value.slice(17,value.length);
@@ -30,8 +33,7 @@ function Mp3converter() {
       }
     };
     
-    axios.request(options).then(function (response) {      
-      console.log(response.data);
+    axios.request(options).then(function (response) {          
       let title=response.data.cleantitle;
       setMp3Data({
         thumbnail:response.data.thumb,

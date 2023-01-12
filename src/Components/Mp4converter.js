@@ -1,22 +1,20 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import Loading from './Loading'
 import axios from 'axios'
-import { Mp4Value } from '../Context/Mp4context'
-import { Mp3Value } from '../Context/Mp3context'
+import { DataValue } from '../Context/Context'
 import { useNavigate } from 'react-router-dom'
 import Warning from './Warning'
 
 function Mp4converter() {
-
-  let [mp4Data,setMp4Data]=useContext(Mp4Value);  
-  let mp3=useContext(Mp3Value);
-  let error=mp3[2];
-  let setError=mp3[3];
-  let isLoading=mp3[4];
-  let setisLoading=mp3[5];
+  
+  let {setMp4Data,error,setError,isLoading,setisLoading} =useContext(DataValue)
   let [link,setLink]=useState(null);
-  let navigate = useNavigate('');  
+  let navigate = useNavigate('');    
 
+
+  useEffect(()=>{
+    setisLoading(false);
+  },[])
 
   let CreateLink=(e)=>{    
     let value=e.target.value;
@@ -36,8 +34,7 @@ function Mp4converter() {
       }
     };
     
-    axios.request(options).then(function (response) {      
-      console.log(response.data);
+    axios.request(options).then(function (response) {          
       let title=response.data.cleantitle;
       setMp4Data({
         thumbnail:response.data.thumb,

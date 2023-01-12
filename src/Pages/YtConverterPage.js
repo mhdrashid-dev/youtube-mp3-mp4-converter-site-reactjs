@@ -10,8 +10,8 @@ import Resultmp4 from '../Components/Resultmp4'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Loading from '../Components/Loading'
-import Mp3context from '../Context/Mp3context'
-import Mp4context from '../Context/Mp4context'
+import Context from '../Context/Context'
+
 
 
 function YtConverterPage() {   
@@ -22,25 +22,23 @@ function YtConverterPage() {
 
 
   return (
-    <section className='w-full min-h-[100vh] bg-secondary'>
-      <Mp3context>
-        <Mp4context>
-          <div className='container mx-auto'>
-            <Router>
-                <Header></Header>
-                <Routes>                
-                    <Route exact path='/' element={<Mp3converter></Mp3converter>}></Route>                               
-                    <Route path='/mp4' element={<Mp4converter></Mp4converter>}></Route>  
-                    <Route path='/resultmp3' element={<Resultmp3></Resultmp3>}></Route>  
-                    <Route path='/resultmp4' element={<Resultmp4></Resultmp4>}></Route>           
-                    <Route path='/loading' element={<Loading></Loading>}></Route>                                 
-                </Routes>
-                <About></About>
-                <Footer></Footer>
-            </Router>
-          </div>
-        </Mp4context>
-      </Mp3context>
+    <section className='w-full min-h-[100vh] bg-secondary'>     
+          <Context>
+            <div className='container mx-auto'>
+              <Router>
+                  <Header></Header>
+                  <Routes>                
+                      <Route exact path='/' element={<Mp3converter></Mp3converter>}></Route>                               
+                      <Route path='/mp4' element={<Mp4converter></Mp4converter>}></Route>  
+                      <Route path='/resultmp3' element={<Resultmp3></Resultmp3>}></Route>  
+                      <Route path='/resultmp4' element={<Resultmp4></Resultmp4>}></Route>           
+                      <Route path='/loading' element={<Loading></Loading>}></Route>                                 
+                  </Routes>
+                  <About></About>
+                  <Footer></Footer>
+              </Router>
+            </div>   
+          </Context>     
     </section>
   )
 }

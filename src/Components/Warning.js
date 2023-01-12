@@ -1,13 +1,11 @@
 import React,{useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Mp3Value } from '../Context/Mp3context';
+import { DataValue } from '../Context/Context';
 
 function Warning() {
 
-    let navigate=useNavigate();
-    let value=useContext(Mp3Value);  
-    let setisLoading=value[5];
-    let setError=value[3]
+    let navigate=useNavigate();    
+    let {setisLoading,setError} =useContext(DataValue)
 
     let BackHome=()=>{
         setError(false);
