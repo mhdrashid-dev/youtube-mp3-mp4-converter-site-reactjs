@@ -3,22 +3,28 @@ import Loading from './Loading'
 import axios from 'axios'
 import { Mp3Value } from '../Context/Mp3context'
 import { useNavigate } from 'react-router-dom'
+import Warning from './Warning'
 
 function Mp3converter() {
+  
+  let [mp3Data,setMp3Data,error,setError,isLoading,setisLoading]=useContext(Mp3Value);  
+  let [link,setLink]=useState(null);
+  let navigate = useNavigate('');  
 
-  let [isLoading,setisLoading]=useState(false);
-  let [mp3Data,setMp3Data]=useContext(Mp3Value)
-  let navigate = useNavigate('');
 
+  let CreateLink=(e)=>{    
+      let value=e.target.value;
+      let sliceLink=value.slice(17,value.length);
+      setLink(sliceLink);
+  }  
 
-  let GetDataMp3=()=>{    
-
+  let GetDataMp3=()=>{       
     setisLoading(true);
     console.log(mp3Data);
     const options = {
       method: 'GET',
       url: 'https://youtube-video-download-info.p.rapidapi.com/dl',
-      params: {id: '3OxIVvOwW3Q'},
+      params: {id: `${link}`},
       headers: {
         'X-RapidAPI-Key': '61af6d2bacmsh0709d336cd20e87p1623e1jsnd9b67238f198',
         'X-RapidAPI-Host': 'youtube-video-download-info.p.rapidapi.com'
@@ -37,7 +43,8 @@ function Mp3converter() {
     }).then(function(response){      
       navigate('/resultmp3');      
     }).catch(function (error) {
-      console.error(error);
+      console.error(error); 
+      setError(true);     
     });
   }
 
@@ -51,15 +58,17 @@ function Mp3converter() {
         </div>
         <div className="link-sec my-5 flex flex-col justify-center items-center p-5 w-full">
             <div className="input-sec w-full md:w-2/3 lg:w-2/4 rounded-lg px-3 py-1 md:py-2 md:px-5 lg:py-1 xl:py-2  bg-white flex justify-between items-center">
-                <input type="text" className='w-3/4 text-sm md:text-lg lg:text-base xl:text-lg bg-transparent focus:outline-none' placeholder='https://youtu.be/5hFd6zGkxLE'/>
+                <input type="text" className='w-3/4 text-sm md:text-lg lg:text-base xl:text-lg bg-transparent focus:outline-none' placeholder='https://youtu.be/5hFd6zGkxLE' onBlur={(e)=>{CreateLink(e)}}/>
                 <button className='text-black duration-300 active:scale-150' onClick={GetDataMp3}><i className="fa-solid fa-magnifying-glass md:text-xl"></i></button>
             </div>
             <p className='text-[.5rem] text-white mt-5 md:text-xs md:mt-8 '>By using our service you accept our Terms of Service</p>
         </div>      
-    </div>
+    </div>    
     :
-    <Loading></Loading>
-    }
+    <>
+    {!error ? <Loading></Loading> :<Warning></Warning>}    
+    </>
+    }    
     </>
   )
 }
